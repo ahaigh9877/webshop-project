@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ProductCard = props => {
+
     return (
         <div className="productCard">
             <img src={props.img} alt={props.name} />
@@ -27,6 +28,7 @@ const ProductCard = props => {
             </button>
         </div>
     );
+
 };
 
 export default ProductCard;

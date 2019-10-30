@@ -1,52 +1,72 @@
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 main {
-    background-image: linear-gradient(lightskyblue, aliceblue);
-    height: 2000px;
-    border: 2px solid blue;
-    padding: 100px 20px 100px 20px;
+  background-image: linear-gradient(lightskyblue, aliceblue);
+  height: auto;
+  border: 2px solid blue;
+  padding: 100px 20px 100px 20px;
 }
 
 header {
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    position: fixed;
-    top: 0;
-    width: calc(100% - 45px);
-    height: auto;
-    padding: 20px;
-    background-color: aliceblue;
-    border: 2px solid black;
-    box-shadow: 3px 3px 8px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 45px);
+  height: auto;
+  padding: 20px;
+  background-color: aliceblue;
+  opacity: 0.9;
+  border: 2px solid black;
+  box-shadow: 3px 3px 8px 4px rgba(0, 0, 0, 0.2);
+  z-index: 5;
 }
 
 footer {
-    height: auto;
-    padding: 10px 0;
-    border: 2px solid black;
+  height: auto;
+  padding: 10px 0;
+  border: 2px solid black;
 }
 
 .productListGallery {
-    display: flex;
-    width: 80%;
-    flex-wrap: wrap;
-    margin: auto;
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-around;
 }
 
 /*-------------Product card styling-----------*/
 
 .productCard {
-    width: 200px;
-    margin: 10px;
-    padding: 5px;
-    border: 1px dashed black;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px dashed black;
 }
 
 .productCard img {
-    width: 150px;
+  width: 150px;
+  margin-top: 20px;
+}
+
+.addToCartButton {
+  margin-bottom: 10px;
+  height: 25px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.addToCartButton:hover {
+  background-color: rgb(221, 239, 255);
+  box-shadow: none;
+  transform: translate(1px, 1px);
 }
 
 /*-------------Shopping cart styling-----------*/
@@ -55,16 +75,16 @@ footer {
 }
 
 .shoppingCartRow {
-    display: flex;
-    border: 1px dashed black;
-    background: white;
-    opacity: 0.8;
-    width: 60%;
-    margin: auto;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  border: 1px dashed black;
+  background: white;
+  opacity: 0.8;
+  width: 60%;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .shoppingCartRow img {
-    width: 150px;
+  width: 150px;
 }

@@ -13,6 +13,7 @@ const ProductCard = props => {
       </p>
       <p>Price: {props.price / 100}€</p>
       <button
+        className="addToCartButton"
         onClick={event =>
           props.handleClick(
             event,

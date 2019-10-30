@@ -1,6 +1,7 @@
 import React from "react";
 
 const ProductCard = props => {
+
   return (
     <div>
       <img src={props.img} alt={props.name} />
@@ -11,6 +12,7 @@ const ProductCard = props => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nibh
         venenatis, aliquam diam eget, tempus metus.{" "}
       </p>
+<p>Price: {props.price / 100}€</p>    
       <button
         onClick={event =>
           props.handleClick(event, props.name, props.img, props.price)
@@ -20,6 +22,7 @@ const ProductCard = props => {
       </button>
     </div>
   );
+
 };
 
 export default ProductCard;

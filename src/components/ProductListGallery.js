@@ -1,9 +1,11 @@
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setProducts, getProducts } from "../actions/getProducts";
 import { addToCart } from "../actions/addToCart";
 import ProductCard from "./ProductCard";
 import { format } from "util";
+
 
 class ProductListGallery extends Component {
   componentDidMount() {
@@ -15,6 +17,7 @@ class ProductListGallery extends Component {
     this.props.addToCart(product, image, price);
   };
 
+
   render() {
     return (
       <div className="productListGallery">
@@ -22,12 +25,14 @@ class ProductListGallery extends Component {
           <ProductCard
             name={product.name}
             img={product.imageUrl}
+price={product.price}      
             handleClick={this.handleClick}
           />
         ))}
       </div>
     );
   }
+
 }
 
 const mapStateToProps = state => {

@@ -2,28 +2,38 @@
     text-align: center;
 }
 
-.App-logo {
-    height: 40vmin;
+
+main {
+  background-image: linear-gradient(lightskyblue, aliceblue);
+  height: 2000px;
+  border: 2px solid blue;
+  padding: 100px 20px 100px 20px;
 }
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+header {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 45px);
+  height: auto;
+  padding: 20px;
+  background-color: aliceblue;
+  border: 2px solid black;
+  box-shadow: 3px 3px 8px 4px rgba(0, 0, 0, 0.2);
 }
 
-.App-link {
-    color: #09d3ac;
-}
+footer {
+  height: auto;
+  padding: 10px 0;
+  border: 2px solid black;
+
 
 .productListGallery {
     display: flex;
     flex-wrap: nowrap;
     width: 80%;
     margin: auto;
+
 }

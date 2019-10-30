@@ -1,11 +1,11 @@
 import React from 'react';
 
-const ProductCard = () => {
+const ProductCard = props => {
     return (
         <div>
-            <img src="https://via.placeholder.com/150" />
+            <img src={props.img} />
             <p>
-                <strong>This will be a product name</strong>
+                <strong>{props.name}</strong>
             </p>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed

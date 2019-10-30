@@ -1,5 +1,5 @@
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 main {
@@ -24,9 +24,10 @@ header {
 }
 
 footer {
-    height: auto;
-    padding: 10px 0;
-    border: 2px solid black;
+
+  height: auto;
+  padding: 10px 0;
+  border: 2px solid black;
 }
 
 .productListGallery {
@@ -67,4 +68,5 @@ footer {
 
 .shoppingCartRow img {
     width: 150px;
+
 }

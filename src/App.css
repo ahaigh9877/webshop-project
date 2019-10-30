@@ -1,6 +1,7 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
+
 
 main {
   background-image: linear-gradient(lightskyblue, aliceblue);
@@ -27,4 +28,12 @@ footer {
   height: auto;
   padding: 10px 0;
   border: 2px solid black;
+
+
+.productListGallery {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80%;
+    margin: auto;
+
 }

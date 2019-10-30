@@ -7,10 +7,8 @@ const ProductCard = props => {
             <p>
                 <strong>{props.name}</strong>
             </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                vitae nibh venenatis.{' '}
-            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            <p>Price: {props.price / 100}€</p>
             <button>Add to cart</button>
         </div>
     );

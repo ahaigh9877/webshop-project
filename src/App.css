@@ -48,3 +48,23 @@ footer {
 .productCard img {
     width: 150px;
 }
+
+/*-------------Shopping cart styling-----------*/
+
+.shoppingCart {
+}
+
+.shoppingCartRow {
+    display: flex;
+    border: 1px dashed black;
+    background: white;
+    opacity: 0.8;
+    width: 60%;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.shoppingCartRow img {
+    width: 150px;
+}

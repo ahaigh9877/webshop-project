@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setProducts, getProducts } from '../actions/getProducts';
@@ -13,7 +12,11 @@ class ProductListGallery extends Component {
         return (
             <div className="productListGallery">
                 {this.props.products.map(product => (
-                    <ProductCard name={product.name} img={product.imageUrl} />
+                    <ProductCard
+                        name={product.name}
+                        img={product.imageUrl}
+                        price={product.price}
+                    />
                 ))}
             </div>
         );

@@ -5,15 +5,15 @@ class SearchForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmitSearch}>
+        <form id="searchForm" onSubmit={this.props.handleSubmitSearch}>
           <h3>Search the store:</h3>
           <input
             type="text"
-            className="searchField"
+            id="searchField"
             value={this.props.searchTerm}
             onChange={this.props.handleSearch}
           />
-          <button className="searchButton" type="submit" value="Submit">
+          <button id="searchButton" type="submit" value="Submit">
             Search
           </button>
         </form>

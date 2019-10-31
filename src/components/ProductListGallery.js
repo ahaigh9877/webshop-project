@@ -6,12 +6,10 @@ import { filterBySearch } from '../actions/filterProducts';
 import ProductCard from './ProductCard';
 import SearchForm from './SearchForm';
 
-let foundProducts;
-
 class ProductListGallery extends Component {
-  state = {
-    searchTerm: null
-  };
+    state = {
+        searchTerm: null
+    };
 
     componentDidMount() {
         this.props.getProducts();
@@ -35,10 +33,10 @@ class ProductListGallery extends Component {
     };
 
     handleReset = event => {
-      console.log("RESET");
-      this.setState({ foundProducts: null, searchTerm: null });
-      console.log(this.state);
-      //this.props.getProducts();
+        console.log('RESET');
+        this.setState({ foundProducts: null, searchTerm: null });
+        console.log(this.state);
+        //this.props.getProducts();
     };
 
     render() {
@@ -74,7 +72,7 @@ class ProductListGallery extends Component {
                 />
             ));
         }
-      
+
         return (
             <div>
                 <SearchForm
@@ -101,7 +99,6 @@ class ProductListGallery extends Component {
             </div>
         );
     }
-  }
 }
 
 const mapStateToProps = state => {

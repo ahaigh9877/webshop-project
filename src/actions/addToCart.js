@@ -1,6 +1,7 @@
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const INCREMENT_QUANTITY = 'INCREMENT_QUANTITY';
 export const DECREMENT_QUANTITY = 'DECREMENT_QUANTITY';
+export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 
 export function addToCart(product, image, price, productId) {
     return function(dispatch, getState) {
@@ -39,6 +40,13 @@ export function incrementQuantity(productId) {
 export function decrementQuantity(productId) {
     return {
         type: DECREMENT_QUANTITY,
+        payload: productId
+    };
+}
+
+export function deleteProduct(productId) {
+    return {
+        type: DELETE_PRODUCT,
         payload: productId
     };
 }

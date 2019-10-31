@@ -1,26 +1,39 @@
 import React, { Component } from 'react';
 import ShoppingCart from './ShoppingCart';
-import { calculateTotal } from '../actions/calculateCartTotal';
-import { incrementQuantity, decrementQuantity } from '../actions/addToCart';
+import {
+    incrementQuantity,
+    decrementQuantity,
+    deleteProduct
+} from '../actions/addToCart';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class ShoppingCartContainer extends Component {
-    componentDidMount() {
-        this.props.calculateTotal(this.props.productsInCart);
-    }
-
     increment(id) {
         this.props.incrementQuantity(id);
-        this.props.calculateTotal(this.props.productsInCart);
     }
 
     decrement(id) {
         this.props.decrementQuantity(id);
-        this.props.calculateTotal(this.props.productsInCart);
+    }
+
+    delete(id) {
+        this.props.deleteProduct(id);
     }
 
     render() {
+        const totalCart = this.props.productsInCart.reduce(
+            (acc, currentValue) => {
+                acc.totalQuantity += currentValue.quantity;
+                acc.totalCost += currentValue.quantity * currentValue.price;
+                return acc;
+            },
+            {
+                totalQuantity: 0,
+                totalCost: 0
+            }
+        );
+
         let finalRow;
 
         if (this.props.productsInCart.length === 0) {
@@ -35,8 +48,8 @@ class ShoppingCartContainer extends Component {
                 <div className="shoppingCartRow">
                     <p>TOTAL TO CHECKOUT</p>
                     <p></p>
-                    <p>Quantity: {this.props.cartTotal.quantity} ITEMS</p>
-                    <p>Price :{this.props.cartTotal.total} €</p>
+                    <p>Quantity: {totalCart.totalQuantity} ITEMS</p>
+                    <p>Price :{totalCart.totalCost} €</p>
                 </div>
             );
         }
@@ -54,6 +67,7 @@ class ShoppingCartContainer extends Component {
                                 quantity={product.quantity}
                                 increment={id => this.increment(id)}
                                 decrement={id => this.decrement(id)}
+                                delete={id => this.delete(id)}
                                 id={product.productId}
                             />
                         );
@@ -74,7 +88,7 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { calculateTotal, incrementQuantity, decrementQuantity }
+    { incrementQuantity, decrementQuantity, deleteProduct }
 )(ShoppingCartContainer);
 
 // mapStateToProps to grab the Shopping cart state

@@ -1,7 +1,8 @@
 import {
     ADD_TO_CART,
     INCREMENT_QUANTITY,
-    DECREMENT_QUANTITY
+    DECREMENT_QUANTITY,
+    DELETE_PRODUCT
 } from '../actions/addToCart';
 
 export default (state = [], action) => {
@@ -26,6 +27,12 @@ export default (state = [], action) => {
                 }
                 return product;
             });
+        }
+        case DELETE_PRODUCT: {
+            console.log('delete product action');
+            return state.filter(
+                product => product.productId !== action.payload
+            );
         }
         default: {
             return state;

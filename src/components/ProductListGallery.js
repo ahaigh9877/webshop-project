@@ -9,7 +9,9 @@ import SearchForm from './SearchForm';
 let foundProducts;
 
 class ProductListGallery extends Component {
-    state = {};
+  state = {
+    searchTerm: null
+  };
 
     componentDidMount() {
         this.props.getProducts();
@@ -30,6 +32,13 @@ class ProductListGallery extends Component {
     handleClick = (event, product, image, price, productId) => {
         event.preventDefault();
         this.props.addToCart(product, image, price, productId);
+    };
+
+    handleReset = event => {
+      console.log("RESET");
+      this.setState({ foundProducts: null, searchTerm: null });
+      console.log(this.state);
+      //this.props.getProducts();
     };
 
     render() {
@@ -65,7 +74,7 @@ class ProductListGallery extends Component {
                 />
             ));
         }
-
+      
         return (
             <div>
                 <SearchForm
@@ -92,6 +101,7 @@ class ProductListGallery extends Component {
             </div>
         );
     }
+  }
 }
 
 const mapStateToProps = state => {

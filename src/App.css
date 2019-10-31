@@ -64,13 +64,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px;
+  width: auto;
+  margin: 40px 0 20px 0;
 }
 
 #searchField {
   margin: 0 10px 0 10px;
   height: 25px;
-  width: 75px;
+  width: 175px;
   padding-left: 10px;
   border-radius: 25px;
   border: none;
@@ -79,12 +80,13 @@ footer {
   transition: 0.2s;
 }
 
-#searchField:focus {
+/* #searchField:focus {
   transition: 0.5s;
   width: 200px;
-}
+} */
 
-#searchButton {
+#searchButton,
+#resetButton {
   height: 26px;
   border-radius: 25px;
   border: none;
@@ -94,7 +96,8 @@ footer {
   transition: 0.2s;
 }
 
-#searchButton:hover {
+#searchButton:hover,
+#resetButton:hover {
   background-color: rgb(221, 239, 255);
   box-shadow: none;
   transform: translate(1px, 1px);
@@ -104,6 +107,10 @@ footer {
 /*-------------Product card styling-----------*/
 
 .productCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 200px;
   margin: 10px;
   padding: 15px;
@@ -132,6 +139,53 @@ footer {
   background-color: rgb(221, 239, 255);
   box-shadow: none;
   transform: translate(1px, 1px);
+  transition: 0.5s;
+}
+
+/*---------------Modal window styling--------------*/
+
+#modalBackdrop {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50;
+}
+
+#modalWindow {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  width: 500px;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px;
+  transition: 0.5s;
+}
+
+#modalFooter {
+  bottom: 20px;
+}
+
+#modalCloseButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 40px;
+  width: 40px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+#modalCloseButton:hover {
+  background-color: slategrey;
   transition: 0.5s;
 }
 

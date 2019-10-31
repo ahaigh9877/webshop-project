@@ -42,6 +42,10 @@ header {
   margin-top: 24px;
 }
 
+#shoppingCart {
+  width: 50px;
+}
+
 /*---------------Footer stylin--------------------*/
 
 footer {

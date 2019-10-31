@@ -17,6 +17,9 @@ const ShoppingCart = props => {
                 </div>
             </div>
             <p>Price : {props.price}€</p>
+            <button id="deleteProduct" onClick={() => props.delete(props.id)}>
+                Delete item
+            </button>
         </div>
     );
 };

@@ -7,6 +7,7 @@ class SearchForm extends Component {
       <div>
         <form id="searchForm" onSubmit={this.props.handleSubmitSearch}>
           <h3>Search the store:</h3>
+
           <input
             type="text"
             id="searchField"
@@ -15,6 +16,9 @@ class SearchForm extends Component {
           />
           <button id="searchButton" type="submit" value="Submit">
             Search
+          </button>
+          <button id="resetButton" onClick={this.props.handleReset}>
+            Reset
           </button>
         </form>
       </div>

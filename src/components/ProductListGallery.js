@@ -8,7 +8,8 @@ import SearchForm from "./SearchForm";
 
 class ProductListGallery extends Component {
   state = {
-    foundProducts: null
+    foundProducts: null,
+    searchTerm: null
   };
 
   componentDidMount() {
@@ -25,17 +26,17 @@ class ProductListGallery extends Component {
     event.preventDefault();
 
     const searchTerm = this.state.searchTerm;
-    console.log("searchTerm: ", searchTerm);
-    const foundProducts = this.props.products.filter(product => {
-      return (
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    });
+    if (searchTerm) {
+      const foundProducts = this.props.products.filter(product => {
+        return (
+          product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          product.description.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      });
 
-    console.log("found products", foundProducts);
-    this.setState({ foundProducts: foundProducts });
-    console.log("state", this.state);
+      this.setState({ foundProducts: foundProducts });
+      console.log("state after search setstate: ", this.state);
+    }
   };
 
   handleClick = (event, product, image, price, productId) => {
@@ -43,14 +44,21 @@ class ProductListGallery extends Component {
     this.props.addToCart(product, image, price, productId);
   };
 
+  handleReset = event => {
+    console.log("RESET");
+    this.setState({ foundProducts: null, searchTerm: null });
+    console.log(this.state);
+    //this.props.getProducts();
+  };
+
   render() {
-    console.log("state.foundproducts", this.state.foundProducts);
     return (
       <div>
         <SearchForm
           handleSearch={this.handleSearch}
           handleSubmitSearch={this.handleSubmitSearch}
           searchTerm={this.state.searchTerm}
+          handleReset={this.handleReset}
         />
         <div className="productListGallery">
           {this.state.foundProducts &&

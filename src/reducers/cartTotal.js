@@ -1,5 +1,4 @@
 const reducer = (state = [], action = {}) => {
-    console.log('Cart total: ', action.payload);
     switch (action.type) {
         case 'CALCULATE_TOTAL':
             return {

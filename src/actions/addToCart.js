@@ -1,38 +1,44 @@
-export const ADD_TO_CART = "ADD_TO_CART";
-export const INCREMENT_QUANTITY = "INCREMENT_QUANTITY";
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const INCREMENT_QUANTITY = 'INCREMENT_QUANTITY';
+export const DECREMENT_QUANTITY = 'DECREMENT_QUANTITY';
 
 export function addToCart(product, image, price, productId) {
-  return function(dispatch, getState) {
-    const cart = getState().shoppingCart;
-    console.log("cart: ", cart);
-    // check if this product is already in the cart??
-    const productToIncrement = cart.find(function(cartProduct) {
-      console.log("cartProduct: ", cartProduct);
-      return cartProduct.productId === productId;
-    });
-
-    console.log("productToIncrement: ", productToIncrement);
-
-    if (productToIncrement) {
-      dispatch({
-        type: INCREMENT_QUANTITY,
-        payload: productToIncrement.productId
-      });
-    } else {
-      dispatch(addNewProductToCart(product, image, price, productId));
-    }
-  };
+    return function(dispatch, getState) {
+        const cart = getState().shoppingCart;
+        const productToIncrement = cart.find(function(cartProduct) {
+            return cartProduct.productId === productId;
+        });
+        if (productToIncrement) {
+            dispatch(incrementQuantity(productToIncrement.productId));
+        } else {
+            dispatch(addNewProductToCart(product, image, price, productId));
+        }
+    };
 }
 
 export function addNewProductToCart(product, image, price, productId) {
-  return {
-    type: ADD_TO_CART,
-    payload: {
-      productId,
-      product,
-      image,
-      price,
-      quantity: 1
-    }
-  };
+    return {
+        type: ADD_TO_CART,
+        payload: {
+            productId,
+            product,
+            image,
+            price,
+            quantity: 1
+        }
+    };
+}
+
+export function incrementQuantity(productId) {
+    return {
+        type: INCREMENT_QUANTITY,
+        payload: productId
+    };
+}
+
+export function decrementQuantity(productId) {
+    return {
+        type: DECREMENT_QUANTITY,
+        payload: productId
+    };
 }

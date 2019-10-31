@@ -7,10 +7,7 @@ const ProductCard = props => {
       <p>
         <strong>{props.name}</strong>
       </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nibh
-        venenatis, aliquam diam eget, tempus metus.{" "}
-      </p>
+      <p>{props.description}</p>
       <p>Price: {props.price / 100}€</p>
       <button
         className="addToCartButton"

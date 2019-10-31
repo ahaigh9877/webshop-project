@@ -1,24 +1,34 @@
-import React from 'react';
+import React from "react";
 
 const ShoppingCart = props => {
-    return (
-        <div className="shoppingCartRow">
-            <img src={props.img} />
-            <p>{props.name}</p>
-            <div id="quantityRow">
-                {' '}
-                <p>
-                    Quantity:
-                    {props.quantity}
-                </p>
-                <div id="quantityBtns">
-                    <button onClick={() => props.increment(props.id)}>+</button>
-                    <button onClick={() => props.decrement(props.id)}>-</button>
-                </div>
-            </div>
-            <p>Price : {props.price}€</p>
+  return (
+    <div className="shoppingCartRow">
+      <img src={props.img} />
+      <p className="shoppingCartText">{props.name}</p>
+      <div id="quantityRow">
+        {" "}
+        <p className="shoppingCartText">
+          Quantity:
+          {props.quantity}
+        </p>
+        <div id="quantityBtns">
+          <button
+            className="quantityBtn"
+            onClick={() => props.increment(props.id)}
+          >
+            +
+          </button>
+          <button
+            className="quantityBtn"
+            onClick={() => props.decrement(props.id)}
+          >
+            -
+          </button>
         </div>
-    );
+      </div>
+      <p className="shoppingCartText">Price : {props.price}€</p>
+    </div>
+  );
 };
 
 export default ShoppingCart;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setProducts, getProducts } from '../actions/getProducts';
 import { addToCart } from '../actions/addToCart';
-import { filterBySearch } from '../actions/filterProducts';
+import { filterBySearch, resetFilters } from '../actions/filterProducts';
 import ProductCard from './ProductCard';
 import SearchForm from './SearchForm';
 
@@ -34,9 +34,9 @@ class ProductListGallery extends Component {
 
     handleReset = event => {
         console.log('RESET');
-        this.setState({ foundProducts: null, searchTerm: null });
+        this.props.resetFilters();
+        this.setState({ searchTerm: null });
         console.log(this.state);
-        //this.props.getProducts();
     };
 
     render() {
@@ -79,6 +79,7 @@ class ProductListGallery extends Component {
                     handleSearch={this.handleSearch}
                     handleSubmitSearch={this.handleSubmitSearch}
                     searchTerm={this.state.searchTerm}
+                    handleReset={this.handleReset}
                 />
                 <div className="productListGallery">{galleryDisplay}</div>
                 <div className="productListGallery">
@@ -110,7 +111,7 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { setProducts, getProducts, addToCart, filterBySearch }
+    { setProducts, getProducts, addToCart, filterBySearch, resetFilters }
 )(ProductListGallery);
 
 // export default ProductListGallery;

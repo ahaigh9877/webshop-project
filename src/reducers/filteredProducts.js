@@ -1,5 +1,6 @@
 import { FILTER_PRODUCTS } from '../actions/filterProducts.js';
 import { FILTER_BY_SEARCH } from '../actions/filterProducts.js';
+import { RESET_FILTERS } from '../actions/filterProducts.js';
 
 const reducer = (state = [], action = {}) => {
     switch (action.type) {
@@ -18,6 +19,8 @@ const reducer = (state = [], action = {}) => {
                         .includes(action.payload.searchTerm.toLowerCase())
                 );
             });
+        case RESET_FILTERS:
+            return action.payload;
         default:
             return state;
     }

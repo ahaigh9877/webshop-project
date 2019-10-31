@@ -2,6 +2,7 @@ import { tsCallSignatureDeclaration } from '@babel/types';
 
 export const FILTER_PRODUCTS = 'FILTER_PRODUCTS';
 export const FILTER_BY_SEARCH = 'FILTER_BY_SEARCH';
+export const RESET_FILTERS = 'RESET_FILTERS';
 
 export function filterProducts(products, categoryId) {
     return {
@@ -11,9 +12,15 @@ export function filterProducts(products, categoryId) {
 }
 
 export function filterBySearch(products, searchTerm) {
-    console.log('filterBySearch was called');
     return {
         type: FILTER_BY_SEARCH,
         payload: { products, searchTerm }
+    };
+}
+
+export function resetFilters() {
+    return {
+        type: RESET_FILTERS,
+        payload: []
     };
 }

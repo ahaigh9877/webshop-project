@@ -7,6 +7,7 @@ import {
 } from '../actions/addToCart';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { resetFilters } from '../actions/filterProducts';
 
 class ShoppingCartContainer extends Component {
     increment(id) {
@@ -20,6 +21,10 @@ class ShoppingCartContainer extends Component {
     delete(id) {
         this.props.deleteProduct(id);
     }
+
+    handleReset = () => {
+        this.props.resetFilters();
+    };
 
     render() {
         const totalCart = this.props.productsInCart.reduce(
@@ -40,7 +45,11 @@ class ShoppingCartContainer extends Component {
             finalRow = (
                 <p id="emptyCart">
                     Your cart is empty, please go{' '}
-                    <Link to="/"> browse our items</Link> !
+                    <Link to="/">
+                        {' '}
+                        <span onClick={this.handleReset}>browse our items</span>
+                    </Link>{' '}
+                    !
                 </p>
             );
         } else {
@@ -88,7 +97,7 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { incrementQuantity, decrementQuantity, deleteProduct }
+    { incrementQuantity, decrementQuantity, deleteProduct, resetFilters }
 )(ShoppingCartContainer);
 
 // mapStateToProps to grab the Shopping cart state

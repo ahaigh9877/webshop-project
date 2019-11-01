@@ -40,7 +40,9 @@ class ProductListGallery extends Component {
     this.props.addToCart(product, image, price, productId);
   };
 
+
   sortLowToHigh = () => this.props.sortLowToHigh(this.props.products);
+
 
   sortHighToLow = () => this.props.sortHighToLow(this.props.products);
 
@@ -80,26 +82,56 @@ class ProductListGallery extends Component {
       ));
     }
 
-    return (
-      <div>
-        <DropdownButton id="dropdown-item-button" title="Sort products">
-          <Dropdown.Item as="button" onClick={() => this.sortLowToHigh()}>
-            Price : low to high
-          </Dropdown.Item>
-          <Dropdown.Item as="button" onClick={() => this.sortHighToLow()}>
-            Price : high to low
-          </Dropdown.Item>
-          <Dropdown.Item as="button" onClick={() => this.sortAToZ()}>
-            A - Z
-          </Dropdown.Item>
-          <Dropdown.Item as="button" onClick={() => this.sortZToA()}>
-            Z - A
-          </Dropdown.Item>
-        </DropdownButton>
-        <div className="productListGallery">{galleryDisplay}</div>
-      </div>
-    );
-  }
+
+
+
+        return (
+            <div>
+                <div>
+                <DropdownButton id="dropdown-item-button" title="Sort products">
+                    <Dropdown.Item
+                        as="button"
+                        onClick={() => this.sortLowToHigh()}
+                    >
+                        Price : low to high
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                        as="button"
+                        onClick={() => this.sortHighToLow()}
+
+                    >
+                        <Dropdown.Item
+                            as="button"
+                            onClick={() => this.sortLowToHigh()}
+                        >
+                            Price : low to high
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                            as="button"
+                            onClick={() => this.sortHighToLow()}
+                        >
+                            Price : high to low
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                            as="button"
+                            onClick={() => this.sortAToZ()}
+                        >
+                            A - Z
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                            as="button"
+                            onClick={() => this.sortZToA()}
+                        >
+                            Z - A
+                        </Dropdown.Item>
+                    </DropdownButton>
+                    <div className="productListGallery">{galleryDisplay}</div>
+                </div>
+            </div>
+        );
+    }
+
+
 }
 
 const mapStateToProps = state => {

@@ -295,7 +295,7 @@ header.smaller {
   transition: opacity 300ms ease-in;
 }
 
-/*---------------Footer stylin--------------------*/
+/*---------------Footer styling--------------------*/
 
 footer {
   height: auto;
@@ -312,6 +312,15 @@ footer {
   margin: auto;
   justify-content: space-around;
 }
+
+
+#dropdown-item-button {
+    background: white;
+    color: lightskyblue;
+    width: 170px;
+    font-weight: 700;
+}
+
 
 /*-------------Product card styling-----------*/
 

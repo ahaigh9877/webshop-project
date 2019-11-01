@@ -1,8 +1,7 @@
-
 import React, { Component, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import logo from "../mms-logo-vertical.svg";
+import logo from "../house-icon.svg";
 import shoppingcart from "../shopping-cart.svg";
 import shoppingcartactive from "../shopping-cart-active.svg";
 import {
@@ -97,18 +96,17 @@ class Header extends Component {
                     src={shoppingcartactive}
                     alt="shopping cart with items"
                   />
-                  <CSSTransition transitionname="quantityBadge">
-                    {
-                      <div className="quantityBadge">
-                        <p id="quantityNumber">
-                          {this.props.cartProducts.reduce(
-                            (a, b) => a + b.quantity,
-                            0
-                          )}
-                        </p>
-                      </div>
-                    }
-                  </CSSTransition>
+
+                  {
+                    <div className="quantityBadge">
+                      <p id="quantityNumber">
+                        {this.props.cartProducts.reduce(
+                          (a, b) => a + b.quantity,
+                          0
+                        )}
+                      </p>
+                    </div>
+                  }
                 </div>
               )}
 
@@ -125,15 +123,16 @@ class Header extends Component {
       </header>
     );
   }
-
 }
 
 const mapStateToProps = state => {
-    return {
-        products: state.products,
-        cartProducts: state.shoppingCart
-    };
+  return {
+    products: state.products,
+    cartProducts: state.shoppingCart
+  };
 };
 
-export default connect(mapStateToProps,
-  { filterProducts, resetFilters, filterBySearch })(Header);
+export default connect(
+  mapStateToProps,
+  { filterProducts, resetFilters, filterBySearch }
+)(Header);

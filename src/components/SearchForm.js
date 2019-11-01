@@ -12,7 +12,7 @@ class SearchForm extends Component {
           <input
             type="text"
             id="searchField"
-            placeholder="search the store"
+            placeholder="Search the store"
             value={this.props.searchTerm}
             onChange={this.props.handleSearch}
           />

@@ -14,8 +14,12 @@ class ProductCard extends Component {
     return (
       <div className="productCard">
         <div>
-          <img src={this.props.img} alt={this.props.name} />
-          <p>
+          <img
+            className="productCardImg"
+            src={this.props.img}
+            alt={this.props.name}
+          />
+          <p id="productCardName">
             <strong>{this.props.name}</strong>
           </p>
         </div>

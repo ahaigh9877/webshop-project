@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-import ModalProductWindow from "./ModalProductWindow";
+import React, { Component } from 'react';
+import ModalProductWindow from './ModalProductWindow';
 
 class ProductCard extends Component {
-  state = { isOpen: false };
+    state = { isOpen: false };
 
-  toggleModal = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  };
+    toggleModal = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    };
+
 
   render() {
     return (
@@ -57,6 +58,7 @@ class ProductCard extends Component {
       </div>
     );
   }
+
 }
 
 export default ProductCard;

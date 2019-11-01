@@ -1,9 +1,11 @@
-import React, { Component, useState } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import logo from '../mms-logo-vertical.svg';
-import shoppingcart from '../shopping-cart.svg';
-import shoppingcartactive from '../shopping-cart-active.svg';
+
+import React, { Component, useState } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import logo from "../house-icon.svg";
+import shoppingcart from "../shopping-cart.svg";
+import shoppingcartactive from "../shopping-cart-active.svg";
+
 import {
     filterBySearch,
     resetFilters,
@@ -66,89 +68,58 @@ class Header extends Component {
                                 </a>
                             </Link>
 
-                            <Link to="/">
-                                <a
-                                    className="topLink"
-                                    onClick={() => this.categoryFilter(2)}
-                                >
-                                    Charms 'n' spells
-                                </a>
-                            </Link>
-                            <Link to="/">
-                                <a
-                                    className="topLink"
-                                    onClick={() => this.categoryFilter(3)}
-                                >
-                                    Beatles merchandise
-                                </a>
-                            </Link>
-                        </div>
+
+        <div id="cartLinkWrapper">
+          <Link to="/checkout" id="cartLink">
+            <div id="cartIconBox">
+              {this.props.cartProducts.length > 0 && (
+                <div id="activeCartWrapper">
+                  <img
+                    id="shoppingCart"
+                    src={shoppingcartactive}
+                    alt="shopping cart with items"
+                  />
+
+                  {
+                    <div className="quantityBadge">
+                      <p id="quantityNumber">
+                        {this.props.cartProducts.reduce(
+                          (a, b) => a + b.quantity,
+                          0
+                        )}
+                      </p>
                     </div>
-                    {/* <div className="headerButton" id="searchWrapper"> */}
-                    <div className="dropdown">
-                        <button className="dropButton">Search</button>
-                        <div className="dropdownCategories">
-                            <SearchForm
-                                className="headerButton"
-                                // id="searchWrapper"
-                                handleSearch={this.handleSearch}
-                                handleSubmitSearch={this.handleSubmitSearch}
-                                searchTerm={this.state.searchTerm}
-                                handleReset={this.handleReset}
-                            />
-                        </div>
-                    </div>
+                  }
+
                 </div>
 
-                <div id="cartLinkWrapper">
-                    <Link to="/checkout" id="cartLink">
-                        <div id="cartIconBox">
-                            {this.props.cartProducts.length > 0 && (
-                                <div id="activeCartWrapper">
-                                    <img
-                                        id="shoppingCart"
-                                        src={shoppingcartactive}
-                                        alt="shopping cart with items"
-                                    />
-                                    <CSSTransition transitionname="quantityBadge">
-                                        {
-                                            <div className="quantityBadge">
-                                                <p id="quantityNumber">
-                                                    {this.props.cartProducts.reduce(
-                                                        (a, b) =>
-                                                            a + b.quantity,
-                                                        0
-                                                    )}
-                                                </p>
-                                            </div>
-                                        }
-                                    </CSSTransition>
-                                </div>
-                            )}
 
-                            {this.props.cartProducts.length < 1 && (
-                                <img
-                                    id="shoppingCart"
-                                    src={shoppingcart}
-                                    alt="empty shopping cart"
-                                />
-                            )}
-                        </div>
-                    </Link>
-                </div>
-            </header>
-        );
-    }
+              {this.props.cartProducts.length < 1 && (
+                <img
+                  id="shoppingCart"
+                  src={shoppingcart}
+                  alt="empty shopping cart"
+                />
+              )}
+            </div>
+          </Link>
+        </div>
+      </header>
+    );
+  }
+
 }
 
 const mapStateToProps = state => {
-    return {
-        products: state.products,
-        cartProducts: state.shoppingCart
-    };
+  return {
+    products: state.products,
+    cartProducts: state.shoppingCart
+  };
 };
 
 export default connect(
+
     mapStateToProps,
     { filterProducts, resetFilters, filterBySearch, getProducts }
+
 )(Header);

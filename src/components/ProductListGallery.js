@@ -44,8 +44,10 @@ class ProductListGallery extends Component {
     sortLowToHigh = () => {
         if (this.props.filteredProducts.length > 0) {
             this.props.sortLowToHigh(this.props.filteredProducts);
+            this.props.getProducts();
         } else {
             this.props.sortLowToHigh(this.props.products);
+            this.props.getProducts();
         }
     };
 
@@ -55,24 +57,30 @@ class ProductListGallery extends Component {
 
         if (this.props.filteredProducts.length > 0) {
             this.props.sortHighToLow(this.props.filteredProducts);
+            this.props.getProducts();
         } else {
             this.props.sortHighToLow(this.props.products);
+            this.props.getProducts();
         }
     };
 
     sortAToZ = () => {
         if (this.props.filteredProducts.length > 0) {
             this.props.sortAToZ(this.props.filteredProducts);
+            this.props.getProducts();
         } else {
             this.props.sortAToZ(this.props.products);
+            this.props.getProducts();
         }
     };
 
     sortZToA = () => {
         if (this.props.filteredProducts.length > 0) {
             this.props.sortZToA(this.props.filteredProducts);
+            this.props.getProducts();
         } else {
             this.props.sortZToA(this.props.products);
+            this.props.getProducts();
         }
     };
 

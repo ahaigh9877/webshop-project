@@ -19,7 +19,7 @@ class ProductCard extends Component {
             <strong>{this.props.name}</strong>
           </p>
         </div>
-        <p>{this.props.description}</p>
+        {/* <p>{this.props.description}</p> */}
         <p>Price: {this.props.price}€</p>
         <div>
           <button className="addToCartButton" onClick={this.toggleModal}>

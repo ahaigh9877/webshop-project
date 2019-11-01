@@ -5,7 +5,7 @@ import logo from "../mms-logo-vertical.svg";
 import shoppingcart from "../shopping-cart.svg";
 import { resetFilters } from "../actions/filterProducts";
 import { filterProducts } from "../actions/filterProducts";
-//import shoppingCart from "./ShoppingCart";
+import { CSSTransition } from "react-transition-group";
 
 class Header extends Component {
   categoryFilter = id => {
@@ -19,41 +19,63 @@ class Header extends Component {
   render() {
     console.log("header state: ", this.props.cartProducts);
     return (
-      <header>
-        <Link to="/">
-          <img
-            onClick={() => this.handleReset()}
-            id="logoImg"
-            alt="logo"
-            src={logo}
-          ></img>
-        </Link>
+      <header id="header">
+        <div id="logoLinkWrapper">
+          <Link id="logoLink" to="/">
+            <img
+              onClick={() => this.handleReset()}
+              id="logoImg"
+              alt="logo"
+              src={logo}
+            ></img>
+          </Link>
+        </div>
+        <div id="headerButtonWrapper">
+          <div className="headerButton" className="dropdown">
+            <button className="dropButton">Categories</button>
+            <div className="dropdownCategories">
+              <Link to="/">
+                <a className="topLink" onClick={() => this.categoryFilter(1)}>
+                  Potions 'n' pills
+                </a>
+              </Link>
 
-        <Link to="/">
-          <a className="topLink" onClick={() => this.categoryFilter(1)}>
-            Category 1
-          </a>
-        </Link>
-
-        <Link to="/">
-          <a className="topLink" onClick={() => this.categoryFilter(2)}>
-            Category 2
-          </a>
-        </Link>
-        <Link to="/">
-          <a className="topLink" onClick={() => this.categoryFilter(3)}>
-            Category 3
-          </a>
-        </Link>
-        <Link to="/checkout" className="topLink">
-          <strong>
-            {this.props.cartProducts.reduce((a, b) => a + b.quantity, 0)}
-          </strong>
-          <img id="shoppingCart" src={shoppingcart} alt="shopping cart" />
-        </Link>
-        {/* <a className="topLink" href="#">
-          Shopping Cart
-        </a> */}
+              <Link to="/">
+                <a className="topLink" onClick={() => this.categoryFilter(2)}>
+                  Charms 'n' spells
+                </a>
+              </Link>
+              <Link to="/">
+                <a className="topLink" onClick={() => this.categoryFilter(3)}>
+                  Beatles merchandise
+                </a>
+              </Link>
+            </div>
+          </div>
+          <div className="headerButton" id="searchWrapper">
+            Search
+          </div>
+        </div>
+        <CSSTransition>
+          <div id="cartLinkWrapper">
+            <Link to="/checkout" id="cartLink">
+              <div id="cartIconBox">
+                {console.log(this.props.cartProducts)}
+                {this.props.cartProducts.length > 0 && (
+                  <div id="quantityBadge">
+                    <p id="quantityNumber">
+                      {this.props.cartProducts.reduce(
+                        (a, b) => a + b.quantity,
+                        0
+                      )}
+                    </p>
+                  </div>
+                )}
+                <img id="shoppingCart" src={shoppingcart} alt="shopping cart" />
+              </div>
+            </Link>
+          </div>
+        </CSSTransition>
       </header>
     );
   }

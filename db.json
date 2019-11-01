@@ -72,7 +72,7 @@
       "description": "Improves health, relieves coughs and colds. Side effect: causes steam to dribble from the patient's ears for several hours afterward.",
       "imageUrl": "https://static1.squarespace.com/static/5b5fbb365cfd7975addeac2e/t/5b6127d7ef72149afbae7da4/1533093847355/?format=500w",
       "inStock": true,
-      "price": "1752"
+      "price": "19"
     },
     {
       "productId": 12,
@@ -206,7 +206,7 @@
     {
       "productId": 28,
       "categoryId": 3,
-      "name": "Ringo Starr muh",
+      "name": "Ringo Starr mug",
       "description": "Express your hatred for everybody’s least favourite Brexit-supporting Beatle with this Ringo-themed mug! Smash it on the floor! Dissolve it in acid! Lauch it into outer-space. The options are endless!",
       "imageUrl": "https://i.imgur.com/W86x8QH.jpg",
       "inStock": false,

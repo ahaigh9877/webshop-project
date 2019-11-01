@@ -1,3 +1,4 @@
+
 import React, { Component, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -124,16 +125,15 @@ class Header extends Component {
       </header>
     );
   }
+
 }
 
 const mapStateToProps = state => {
-  return {
-    products: state.products,
-    cartProducts: state.shoppingCart
-  };
+    return {
+        products: state.products,
+        cartProducts: state.shoppingCart
+    };
 };
 
-export default connect(
-  mapStateToProps,
-  { filterProducts, resetFilters, filterBySearch }
-)(Header);
+export default connect(mapStateToProps,
+  { filterProducts, resetFilters, filterBySearch })(Header);

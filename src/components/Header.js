@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "../mms-logo-vertical.svg";
 import shoppingcart from "../shopping-cart.svg";
+import shoppingcartactive from "../shopping-cart-active.svg";
 import { resetFilters } from "../actions/filterProducts";
 import { filterProducts } from "../actions/filterProducts";
 import { CSSTransition } from "react-transition-group";
@@ -56,26 +57,42 @@ class Header extends Component {
             Search
           </div>
         </div>
-        <CSSTransition>
-          <div id="cartLinkWrapper">
-            <Link to="/checkout" id="cartLink">
-              <div id="cartIconBox">
-                {console.log(this.props.cartProducts)}
-                {this.props.cartProducts.length > 0 && (
-                  <div id="quantityBadge">
-                    <p id="quantityNumber">
-                      {this.props.cartProducts.reduce(
-                        (a, b) => a + b.quantity,
-                        0
-                      )}
-                    </p>
-                  </div>
-                )}
-                <img id="shoppingCart" src={shoppingcart} alt="shopping cart" />
-              </div>
-            </Link>
-          </div>
-        </CSSTransition>
+
+        <div id="cartLinkWrapper">
+          <Link to="/checkout" id="cartLink">
+            <div id="cartIconBox">
+              {this.props.cartProducts.length > 0 && (
+                <div id="activeCartWrapper">
+                  <img
+                    id="shoppingCart"
+                    src={shoppingcartactive}
+                    alt="shopping cart with items"
+                  />
+                  <CSSTransition transitionname="quantityBadge">
+                    {
+                      <div className="quantityBadge">
+                        <p id="quantityNumber">
+                          {this.props.cartProducts.reduce(
+                            (a, b) => a + b.quantity,
+                            0
+                          )}
+                        </p>
+                      </div>
+                    }
+                  </CSSTransition>
+                </div>
+              )}
+
+              {this.props.cartProducts.length < 1 && (
+                <img
+                  id="shoppingCart"
+                  src={shoppingcart}
+                  alt="empty shopping cart"
+                />
+              )}
+            </div>
+          </Link>
+        </div>
       </header>
     );
   }

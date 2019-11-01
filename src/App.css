@@ -166,12 +166,17 @@ header.smaller {
   width: 50px;
 }
 
-#quantityBadge {
+#activeCartWrapper {
+  height: 50px;
+}
+
+.quantityBadge {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   font-family: "Lilita One";
+  font-size: 20px;
   right: -12px;
   top: -12px;
   background-color: lightskyblue;
@@ -182,6 +187,26 @@ header.smaller {
   box-shadow: 3px 3px 5px lightskyblue, -3px 3px 5px lightskyblue,
     3px -3px 5px lightskyblue, -3px -3px 5px lightskyblue;
   transition: 0.5s;
+}
+
+.quantityBadge-enter {
+  opacity: 0.01;
+}
+
+.quantityBadge-enter-active {
+  background-color: magenta;
+  opacity: 1;
+  transform: scale(2);
+  transition: opacity 300ms ease-in;
+}
+
+.quantityBadge-leave {
+  opacity: 1;
+}
+
+.quantityBadge-leave.quantityBadge-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
 
 /*---------------Footer stylin--------------------*/

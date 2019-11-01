@@ -7,10 +7,6 @@ import ProductCard from "./ProductCard";
 import SearchForm from "./SearchForm";
 
 class ProductListGallery extends Component {
-  state = {
-    searchTerm: null
-  };
-
   componentDidMount() {
     this.props.getProducts();
     window.addEventListener("scroll", this.resizeHeaderOnScroll);
@@ -29,18 +25,6 @@ class ProductListGallery extends Component {
       //headerBut.classList.add("smaller");
     }
   }
-
-  handleSearch = event => {
-    //using setState here for now. May use action later... or just on submit perhaps?
-
-    this.setState({ searchTerm: event.target.value });
-  };
-
-  handleSubmitSearch = event => {
-    event.preventDefault();
-    this.props.filterBySearch(this.props.products, this.state.searchTerm);
-    // this.setState({ foundProducts: foundProducts });
-  };
 
   handleClick = (event, product, image, price, productId) => {
     event.preventDefault();
@@ -88,14 +72,8 @@ class ProductListGallery extends Component {
 
     return (
       <div>
-        <SearchForm
-          handleSearch={this.handleSearch}
-          handleSubmitSearch={this.handleSubmitSearch}
-          searchTerm={this.state.searchTerm}
-          handleReset={this.handleReset}
-        />
         <div className="productListGallery">{galleryDisplay}</div>
-        <div className="productListGallery">
+        {/* <div className="productListGallery">
           {this.state.foundProducts &&
             this.state.foundProducts.map((product, index) => (
               <ProductCard
@@ -109,7 +87,7 @@ class ProductListGallery extends Component {
                 productId={product.productId}
               />
             ))}
-        </div>
+        </div> */}
       </div>
     );
   }

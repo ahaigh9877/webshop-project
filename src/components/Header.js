@@ -4,11 +4,28 @@ import { Link } from "react-router-dom";
 import logo from "../mms-logo-vertical.svg";
 import shoppingcart from "../shopping-cart.svg";
 import shoppingcartactive from "../shopping-cart-active.svg";
-import { resetFilters } from "../actions/filterProducts";
-import { filterProducts } from "../actions/filterProducts";
+import {
+  filterBySearch,
+  resetFilters,
+  filterProducts
+} from "../actions/filterProducts";
 import { CSSTransition } from "react-transition-group";
+import SearchForm from "./SearchForm";
 
 class Header extends Component {
+  state = {
+    searchTerm: null
+  };
+  handleSearch = event => {
+    this.setState({ searchTerm: event.target.value });
+  };
+
+  handleSubmitSearch = event => {
+    event.preventDefault();
+    if (this.state.searchTerm) {
+      this.props.filterBySearch(this.props.products, this.state.searchTerm);
+    }
+  };
   categoryFilter = id => {
     console.log("filtering called", this.props.products, id);
     return this.props.filterProducts(this.props.products, id);
@@ -32,7 +49,7 @@ class Header extends Component {
           </Link>
         </div>
         <div id="headerButtonWrapper">
-          <div className="headerButton" className="dropdown">
+          <div className="dropdown">
             <button className="dropButton">Categories</button>
             <div className="dropdownCategories">
               <Link to="/">
@@ -53,8 +70,19 @@ class Header extends Component {
               </Link>
             </div>
           </div>
-          <div className="headerButton" id="searchWrapper">
-            Search
+          {/* <div className="headerButton" id="searchWrapper"> */}
+          <div className="dropdown">
+            <button className="dropButton">Search</button>
+            <div className="dropdownCategories">
+              <SearchForm
+                className="headerButton"
+                // id="searchWrapper"
+                handleSearch={this.handleSearch}
+                handleSubmitSearch={this.handleSubmitSearch}
+                searchTerm={this.state.searchTerm}
+                handleReset={this.handleReset}
+              />
+            </div>
           </div>
         </div>
 
@@ -107,5 +135,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { filterProducts, resetFilters }
+  { filterProducts, resetFilters, filterBySearch }
 )(Header);

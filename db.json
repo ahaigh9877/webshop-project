@@ -3,38 +3,38 @@
         {
             "productId": 1,
             "categoryId": 1,
-            "name": "Product 1",
-            "description": "That's why you always leave a note! Army had half a day. No… but I'd like to be asked! First place chick is hot, but has an attitude, doesn't date magicians. I care deeply for nature.",
-            "imageUrl": "https://picsum.photos/400?image=696",
+            "name": "Polyjuice Potion",
+            "description": "Tired of seeing the same old face in the mirror everyday ? Good news, for an hour you won't have to !",
+            "imageUrl": "https://www.menkind.co.uk/media/catalog/product/cache/84a9762dea65cd4d66747ad9a34bdb64/7/1/71950-harry-potter-potion-lamp-1-1000.jpg",
             "inStock": true,
-            "price": "3432"
+            "price": "199"
         },
         {
             "productId": 2,
             "categoryId": 1,
-            "name": "Thing 2",
-            "description": "Say goodbye to these, because it's the last time! I care deeply for nature. Guy's a pro. Get me a vodka rocks. And a piece of toast.",
-            "imageUrl": "https://picsum.photos/400?image=230",
+            "name": "Confusing Concoction",
+            "description": "Causes the drinker to become confused, distracted and sick.",
+            "imageUrl": "https://d.wattpad.com/story_parts/699873420/images/158695304eb09911855926916674.jpg",
             "inStock": false,
-            "price": "2374"
+            "price": "59"
         },
         {
             "productId": 3,
-            "categoryId": 3,
-            "name": "Product 3",
-            "description": "Steve Holt! I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense.",
-            "imageUrl": "https://picsum.photos/400?image=277",
+            "categoryId": 2,
+            "name": "Accio",
+            "description": "Single use. Convenient if you're on the couch and can't be bothered to stand to grab the remote",
+            "imageUrl": "https://c8.alamy.com/comp/CTW0MD/old-parchment-paper-scroll-CTW0MD.jpg",
             "inStock": false,
-            "price": "1942"
+            "price": "9"
         },
         {
             "productId": 4,
-            "categoryId": 3,
-            "name": "Thing 4",
-            "description": "Michael! I hear the jury's still out on science. I care deeply for nature. Guy's a pro. I'm half machine. I'm a monster.",
-            "imageUrl": "https://picsum.photos/400?image=696",
+            "categoryId": 2,
+            "name": "Alohomora",
+            "description": "Single use. Unlocks safes, house doors, car doors. To use responsibly.",
+            "imageUrl": "https://c8.alamy.com/comp/CTW0MD/old-parchment-paper-scroll-CTW0MD.jpg",
             "inStock": true,
-            "price": "2367"
+            "price": "99"
         },
         {
             "productId": 5,
@@ -57,20 +57,20 @@
         {
             "productId": 7,
             "categoryId": 2,
-            "name": "Product 7",
-            "description": "Oh, you're gonna be in a coma, all right. I don't understand the question, and I won't respond to it.",
-            "imageUrl": "https://picsum.photos/400?image=616",
+            "name": "Oculus Reparo",
+            "description": "Single use. This spell fixes glasses. Simple and to the point.",
+            "imageUrl": "https://c8.alamy.com/comp/CTW0MD/old-parchment-paper-scroll-CTW0MD.jpg",
             "inStock": false,
-            "price": "2005"
+            "price": "29"
         },
         {
             "productId": 8,
             "categoryId": 2,
-            "name": "thing 8",
-            "description": "",
-            "imageUrl": "https://picsum.photos/400?image=522",
+            "name": "Scourgify",
+            "description": "Hate spring cleaning? Then you’ll love this charm that does the cleaning for you.",
+            "imageUrl": "https://c8.alamy.com/comp/CTW0MD/old-parchment-paper-scroll-CTW0MD.jpg",
             "inStock": false,
-            "price": "1358"
+            "price": "59"
         },
         {
             "productId": 9,
@@ -84,29 +84,29 @@
         {
             "productId": 10,
             "categoryId": 1,
-            "name": "Product 10",
-            "description": "",
-            "imageUrl": "https://picsum.photos/400?image=696",
+            "name": "Hiccoughing Potion",
+            "description": "Hiccoughing is annoying. Get rid of it in two sips !",
+            "imageUrl": "https://i.pinimg.com/originals/88/5a/bf/885abf8b4082091793359d63bb4566ba.jpg",
             "inStock": false,
-            "price": "1823"
+            "price": "9"
         },
         {
             "productId": 11,
             "categoryId": 1,
-            "name": "Product 11",
-            "description": "",
-            "imageUrl": "https://picsum.photos/400?image=314",
+            "name": "Pepperup Potion",
+            "description": "Improves health, relieves coughs and colds. Side effect: causes steam to dribble from the patient's ears for several hours afterward.",
+            "imageUrl": "https://static1.squarespace.com/static/5b5fbb365cfd7975addeac2e/t/5b6127d7ef72149afbae7da4/1533093847355/?format=500w",
             "inStock": true,
             "price": "1752"
         },
         {
             "productId": 12,
             "categoryId": 1,
-            "name": "Product 12",
-            "description": "",
-            "imageUrl": "https://picsum.photos/400?image=442",
+            "name": "Felix Felicis",
+            "description": "Out of luck ? Not anymore ! Highly recommended before playing the lottery, asking for a promotion, or crossing the road with your eyes closed.",
+            "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61r3cl5p7SL._SY550_.jpg",
             "inStock": true,
-            "price": "2196"
+            "price": "59"
         },
         {
             "productId": 13,
@@ -120,20 +120,20 @@
         {
             "productId": 14,
             "categoryId": 2,
-            "name": "Product 14",
-            "description": "",
-            "imageUrl": "https://picsum.photos/400?image=739",
+            "name": "Muffliato",
+            "description": "Single use. This spell is especially useful for parents hoping to discuss delicate topics around their kids. Muffliato fills targets’ ears with a buzzing noise, making them unable to hear anything around them.",
+            "imageUrl": "https://c8.alamy.com/comp/CTW0MD/old-parchment-paper-scroll-CTW0MD.jpg",
             "inStock": false,
-            "price": "1454"
+            "price": "39"
         },
         {
             "productId": 15,
             "categoryId": 1,
-            "name": "Product 15",
-            "description": "",
-            "imageUrl": "https://picsum.photos/400?image=901",
+            "name": "Veritaserum",
+            "description": "Want to know how people feel about you, for real ? With Veritaserum, you can finally find out. Usually paired with a 'Fixing hurt feelings' concotion.",
+            "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41MNgWJUI%2BL.jpg",
             "inStock": false,
-            "price": "1368"
+            "price": "199"
         },
         {
             "productId": 16,
@@ -147,38 +147,38 @@
         {
             "productId": 17,
             "categoryId": 1,
-            "name": "Product 17",
-            "description": "",
-            "imageUrl": "https://picsum.photos/400?image=264",
+            "name": "Skele-Gro",
+            "description": "To be administered by a medical professional, for bones re-growth. Side effects include extreme pain.",
+            "imageUrl": "https://www.theshopthatmustnotbenamed.co.uk/img/product/harry-potter-skelegro-water-bottle-12008467-600.jpg",
             "inStock": true,
-            "price": "2523"
+            "price": "399"
         },
         {
             "productId": 18,
             "categoryId": 1,
-            "name": "Product 18",
-            "description": "",
-            "imageUrl": "https://picsum.photos/400?image=133",
+            "name": "Sleekeazy's Hair Potion",
+            "description": "Who needs hairgel when you have Sleekeazy's Hair Potion ?",
+            "imageUrl": "https://i.pinimg.com/originals/5d/64/87/5d64875f34c233a90ce022988f12e4d4.jpg",
             "inStock": true,
-            "price": "1118"
+            "price": "19"
         },
         {
             "productId": 19,
             "categoryId": 2,
-            "name": "Product 19",
-            "description": "",
-            "imageUrl": "https://picsum.photos/400?image=696",
+            "name": "Cushioning Charm",
+            "description": "Single use. Never worry about falling again thanks to this charm that creates an invisible cushion around you or whatever you decide to use it on.",
+            "imageUrl": "https://c8.alamy.com/comp/CTW0MD/old-parchment-paper-scroll-CTW0MD.jpg",
             "inStock": false,
             "price": "1966"
         },
         {
             "productId": 20,
             "categoryId": 1,
-            "name": "Product 20",
-            "description": "",
-            "imageUrl": "https://picsum.photos/400?image=354",
+            "name": "Draught of Peace",
+            "description": "Provides personal comfort, calms anxiety and soothes agitation.",
+            "imageUrl": "https://i.pinimg.com/originals/86/30/66/8630661a67a3af4020b1672e5140daee.jpg",
             "inStock": false,
-            "price": "2569"
+            "price": "29"
         }
     ],
     "categories": [

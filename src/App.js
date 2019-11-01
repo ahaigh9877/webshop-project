@@ -1,11 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
-
-// import the two exports from the last code snippet.
 import { persistor, store } from './store';
-// import your necessary custom components.
-// import { LoadingView } from './components';
 
 import './App.css';
 import Header from './components/Header';

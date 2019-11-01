@@ -64,7 +64,9 @@ class ProductListGallery extends Component {
         console.log(this.state);
     };
 
-    sortLowToHigh = () => this.props.sortLowToHigh(this.props.products);
+    sortLowToHigh = () => {
+        this.props.sortLowToHigh(this.props.products);
+    };
 
     sortHighToLow = () => this.props.sortHighToLow(this.props.products);
 
@@ -106,47 +108,37 @@ class ProductListGallery extends Component {
 
         return (
             <div>
-                <SearchForm
-                    handleSearch={this.handleSearch}
-                    handleSubmitSearch={this.handleSubmitSearch}
-                    searchTerm={this.state.searchTerm}
-                    handleReset={this.handleReset}
-                />
-                <DropdownButton id="dropdown-item-button" title="Sort products">
-                    <Dropdown.Item
-                        as="button"
-                        onClick={() => this.sortLowToHigh()}
+                <div>
+                    <DropdownButton
+                        id="dropdown-item-button"
+                        title="Sort products"
                     >
-                        Price : low to high
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                        as="button"
-                        onClick={() => this.sortHighToLow()}
-                    >
-                        Price : high to low
-                    </Dropdown.Item>
-                    <Dropdown.Item as="button" onClick={() => this.sortAToZ()}>
-                        A - Z
-                    </Dropdown.Item>
-                    <Dropdown.Item as="button" onClick={() => this.sortZToA()}>
-                        Z - A
-                    </Dropdown.Item>
-                </DropdownButton>
-                <div className="productListGallery">{galleryDisplay}</div>
-                <div className="productListGallery">
-                    {this.state.foundProducts &&
-                        this.state.foundProducts.map((product, index) => (
-                            <ProductCard
-                                key={index}
-                                na
-                                me={product.name}
-                                description={product.description}
-                                img={product.imageUrl}
-                                price={product.price}
-                                handleClick={this.handleClick}
-                                productId={product.productId}
-                            />
-                        ))}
+                        <Dropdown.Item
+                            as="button"
+                            onClick={() => this.sortLowToHigh()}
+                        >
+                            Price : low to high
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                            as="button"
+                            onClick={() => this.sortHighToLow()}
+                        >
+                            Price : high to low
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                            as="button"
+                            onClick={() => this.sortAToZ()}
+                        >
+                            A - Z
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                            as="button"
+                            onClick={() => this.sortZToA()}
+                        >
+                            Z - A
+                        </Dropdown.Item>
+                    </DropdownButton>
+                    <div className="productListGallery">{galleryDisplay}</div>
                 </div>
             </div>
         );

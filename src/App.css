@@ -184,7 +184,7 @@ header.smaller {
     transition: 0.5s;
 }
 
-/*---------------Footer stylin--------------------*/
+/*---------------Footer styling--------------------*/
 
 footer {
     height: auto;
@@ -244,6 +244,13 @@ footer {
     box-shadow: none;
     transform: translate(1px, 1px);
     transition: 0.5s;
+}
+
+#dropdown-item-button {
+    background: white;
+    color: lightskyblue;
+    width: 170px;
+    font-weight: 700;
 }
 
 /*-------------Product card styling-----------*/

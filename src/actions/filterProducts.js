@@ -1,5 +1,3 @@
-import { tsCallSignatureDeclaration } from '@babel/types';
-
 export const FILTER_PRODUCTS = 'FILTER_PRODUCTS';
 export const FILTER_BY_SEARCH = 'FILTER_BY_SEARCH';
 export const RESET_FILTERS = 'RESET_FILTERS';

@@ -1,5 +1,7 @@
+import { FILTER_PRODUCTS } from '../actions/filterProducts.js';
+import { FILTER_BY_SEARCH } from '../actions/filterProducts.js';
+import { RESET_FILTERS } from '../actions/filterProducts.js';
 import {
-    SET_PRODUCTS,
     SORT_LOW_TO_HIGH,
     SORT_HIGH_TO_LOW,
     SORT_ATOZ,
@@ -8,8 +10,23 @@ import {
 
 const reducer = (state = [], action = {}) => {
     switch (action.type) {
-        case SET_PRODUCTS:
-            return action.payload.products;
+        case FILTER_PRODUCTS:
+            return action.payload.products.filter(
+                product => product.categoryId === action.payload.categoryId
+            );
+        case FILTER_BY_SEARCH:
+            return action.payload.products.filter(product => {
+                return (
+                    product.name
+                        .toLowerCase()
+                        .includes(action.payload.searchTerm.toLowerCase()) ||
+                    product.description
+                        .toLowerCase()
+                        .includes(action.payload.searchTerm.toLowerCase())
+                );
+            });
+        case RESET_FILTERS:
+            return action.payload;
         case SORT_LOW_TO_HIGH:
             let sortedLow = action.payload.slice();
             return sortedLow.sort((a, b) => {

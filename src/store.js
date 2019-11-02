@@ -1,9 +1,27 @@
-import { createStore } from "redux";
-import reducer from "./reducers";
+import { createStore, applyMiddleware, compose } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import rootReducer from './reducers';
+import ReduxThunk from 'redux-thunk';
 
-const enhancer =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
-const store = createStore(reducer, enhancer);
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
+    ? window.__REDUX_DEVTOOLS_EXTENSION__()
+    : x => x;
 
-export default store;
+const persistConfig = {
+    key: 'root',
+    storage: storage,
+    stateReconciler: autoMergeLevel2 // see "Merge Process" section for details.
+};
+
+const enhancer = compose(
+    applyMiddleware(ReduxThunk),
+    devTools
+);
+
+const pReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = createStore(pReducer, enhancer);
+export const persistor = persistStore(store);
